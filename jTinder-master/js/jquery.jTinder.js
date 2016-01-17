@@ -61,7 +61,7 @@
 		
 	}
 
-	function getTags(img,token){
+	function getTags(img,token,status){
 		var authbearer = "Bearer " + token;
 		console.log(token);
 		$.ajax({ 
@@ -74,29 +74,13 @@
 	        "url": img.src
 	      },
 	      success: function(data){     
-	        var tags = data.results[0].result.tag.classes;
+	        var tags = data.results[0].result.tag.classes[0];
+	        sendTags(tags,status);
 	        console.log(data);
-	        var url = "http://172.17.73.212:3000/" + status;
-			// $.ajax({ 
-			//     type: "POST",
-			//     dataType: "jsonp",
-			//     accepts: "application/json",
-			//     contentType: "json",
-			//     url: url,
-			//     data: {
-			//       "tags": tags
-			//     },
-			//     success: function(data){
-			//       console.log(data);
-			//     },
-			//     error: function(data){
-			//       console.log(data);
-			//     }
-			// });
-		      },
-		      error: function(data){
-		        console.log(data);
-		      }
+		  },
+	      error: function(data){
+	        console.log(data);
+	      }
 
 		});
 	}
@@ -122,9 +106,24 @@
 		});
 	}
 
-	function sendTags(status){
-		var tags = getTags(panes.eq(current_pane).find("img")[0],token);
-
+	function sendTags(tags,status){
+		 var url = "http://172.17.73.212:8080/" + status;
+		 console.log(url);
+		$.ajax({ 
+		    type: "POST",
+		    dataType: "json",
+		    contentType:"json",
+		    url: url,
+		    data: {
+		    	"tags":tags
+		    },
+		    success: function(data){
+		      console.log(data);
+		    },
+		    error: function(data){
+		      console.log(data);
+		    }
+		});
 	}
 
 	Plugin.prototype = {
@@ -158,12 +157,13 @@
 		},
 
 		dislike: function() {
-			sendTags("rejectedtags");
+			getTags(panes.eq(current_pane).find("img")[0],token,"rejectedtags");
+			getNewPicture();
 		},
 
 		like: function() {
 
-			sendTags("acceptedtags");
+			getTags(panes.eq(current_pane).find("img")[0],token,"acceptedtags");
 			getNewPicture();
 		}
 
