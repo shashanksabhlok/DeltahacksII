@@ -56,13 +56,13 @@
 	        var url = "http://172.17.73.212:3000/" + status;
 			$.ajax({ 
 			    type: "POST",
-			    dataType: "json",
+			    dataType: "jsonp",
+			    accepts: "application/json",
 			    contentType: "json",
 			    url: url,
 			    data: {
 			      "tags": tags
 			    },
-			    async: false,
 			    success: function(data){
 			      console.log(data);
 			    },
