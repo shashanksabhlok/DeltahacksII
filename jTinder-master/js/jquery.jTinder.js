@@ -38,7 +38,7 @@
 	}
 
 	function getNewPicture(){
-		var flickrUrl = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=9b18b1255294c4fcd50c0d852e57e66d&tags=sexy%2Chot&sort=relevance&safe_search=3&content_type=1&per_page=500&format=json&nojsoncallback=1&auth_token=72157663647929405-c20ae865be786cbb&api_sig=3e2e1d230ff446a338fe2d54d052daeb"
+		var flickrUrl = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=9b18b1255294c4fcd50c0d852e57e66d&tags=sexy%2Chot&sort=relevance&safe_search=2&content_type=1&per_page=500&format=json&nojsoncallback=1&auth_token=72157663647929405-c20ae865be786cbb&api_sig=f321e2453fa322e7070e74b546ee5594"
 		$.ajax({ 
 		    type: "GET",
 		    dataType: "json",
@@ -108,15 +108,14 @@
 
 	function sendTags(tags,status){
 		 var url = "http://172.17.73.212:8080/" + status;
-		 console.log(url);
+		 var jsonTag = {"tags":tags};
+		 console.log(jsonTag);
+		 console.log(tags)
 		$.ajax({ 
 		    type: "POST",
 		    dataType: "json",
-		    contentType:"json",
 		    url: url,
-		    data: {
-		    	"tags":tags
-		    },
+		    data: JSON.stringify(jsonTag),
 		    success: function(data){
 		      console.log(data);
 		    },
@@ -138,8 +137,6 @@
 			current_pane = panes.length - 1;
 			$that = this;
 			getToken();
-
-
 
 			$(element).bind('touchstart mousedown', this.handler);
 			$(element).bind('touchmove mousemove', this.handler);
