@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title align="centre">No Fappers</title>
+    <title align="centre">Kiddify</title>
 
     <!-- Add to homescreen for Chrome on Android -->
     <meta name="mobile-web-app-capable" content="yes">
@@ -55,7 +55,7 @@
     <div class="demo-layout mdl-layout mdl-layout--fixed-header mdl-js-layout mdl-color--grey-100">
       <header class="demo-header mdl-layout__header mdl-layout__header--scroll mdl-color--grey-100 mdl-color-text--grey-800">
         <div class="mdl-layout__header-row">
-          <span class="mdl-layout-title" align="center">No Fappers</span>
+            <span class="mdl-layout-title" align="center">Kiddify <i class="material-icons">child_care</i></span>
           <div class="mdl-layout-spacer"></div>
         </div>
       </header>
@@ -84,19 +84,7 @@
           </div>
           </div>
         </div>
-		<div>
-		<video height="180" width="300" id="a" controls> 
-		<source src="https://videos.mozilla.org/serv/webmademovies/popcorntest.mp4"></source>
-		<source src="https://videos.mozilla.org/serv/webmademovies/popcorntest.ogv"></source>
-		<source src="https://videos.mozilla.org/serv/webmademovies/popcorntest.webm"></source>
-		</video>
-		<video height="180" width="300" id="b"> 
-		<source src="https://videos.mozilla.org/serv/webmademovies/popcorntest.mp4"></source>
-		<source src="https://videos.mozilla.org/serv/webmademovies/popcorntest.ogv"></source>
-		<source src="https://videos.mozilla.org/serv/webmademovies/popcorntest.webm"></source>
-		</video>
-	  </div>
-		
+
         <footer class="demo-footer mdl-mini-footer">
         </footer>
       </main>
@@ -109,85 +97,6 @@
       $('#dynamic').delay(8000).fadeIn(400);
       $("#dynamic").html("<img  style='position:absolute' src='http://www.elle.co.za/wp-content/uploads/2013/10/miranda-kerrr-co-uk-na-victorias-secret-fashion-show-victoria-secret-1791601470.gif'>");
     });
-	
-	var videos = {
-    a: Popcorn("#a"),
-    b: Popcorn("#b"),
-  },
-  scrub = $("#scrub"),
-  loadCount = 0,
-  events = "play pause timeupdate seeking".split(/\s+/g);
-
-// iterate both media sources
-Popcorn.forEach(videos, function(media, type) {
-
-  // when each is ready... 
-  media.on("canplayall", function() {
-
-    // trigger a custom "sync" event
-    this.emit("sync");
-
-    // set the max value of the "scrubber"
-    scrub.attr("max", this.duration());
-
-    // Listen for the custom sync event...    
-  }).on("sync", function() {
-
-    // Once both items are loaded, sync events
-    if (++loadCount == 2) {
-
-      // Iterate all events and trigger them on the video B
-      // whenever they occur on the video A
-      events.forEach(function(event) {
-
-        videos.a.on(event, function() {
-
-          // Avoid overkill events, trigger timeupdate manually
-          if (event === "timeupdate") {
-
-            if (!this.media.paused) {
-              return;
-            }
-            videos.b.emit("timeupdate");
-
-            // update scrubber
-            scrub.val(this.currentTime());
-
-            return;
-          }
-
-          if (event === "seeking") {
-            videos.b.currentTime(this.currentTime());
-          }
-
-          if (event === "play" || event === "pause") {
-            videos.b[event]();
-          }
-        });
-      });
-    }
-  });
-});
-
-scrub.bind("change", function() {
-  var val = this.value;
-  videos.a.currentTime(val);
-  videos.b.currentTime(val);
-});
-
-// With requestAnimationFrame, we can ensure that as 
-// frequently as the browser would allow, 
-// the video is resync'ed.
-function sync() {
-  if (videos.b.media.readyState === 4) {
-    videos.b.currentTime(
-      videos.a.currentTime()
-    );
-  }
-  requestAnimationFrame(sync);
-}
-
-sync();
       </script>
   </body>
 </html>
