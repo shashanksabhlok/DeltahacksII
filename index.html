@@ -1,101 +1,168 @@
-<!doctype html>
-
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title align="centre">Kiddify</title>
-
-    <!-- Add to homescreen for Chrome on Android -->
-    <meta name="mobile-web-app-capable" content="yes">
-    <link rel="icon" sizes="192x192" href="images/android-desktop.png">
-
-    <!-- Add to homescreen for Safari on iOS -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Material Design Lite">
-    <link rel="apple-touch-icon-precomposed" href="images/ios-desktop.png">
-
-    <!-- Tile icon for Win8 (144x144 + tile color) -->
-    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
-    <meta name="msapplication-TileColor" content="#3372DF">
-
-    <link rel="shortcut icon" href="images/favicon.png">
-
-    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
-    <!--
-    <link rel="canonical" href="http://www.example.com/">
-    -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <link href='//fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en' rel='stylesheet' type='text/css'>
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="stylesheet" type="text/css" href="css/nanogallery.min.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery.fs.wallpaper.css">
+    <link rel="stylesheet" type="text/css" href="css/app.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
-    <link rel="stylesheet" href="material.min.css">
-    <link rel="stylesheet" href="styles.css">
-    <style>
-    #view-source {
-      position: fixed;
-      display: block;
-      right: 0;
-      bottom: 0;
-      margin-right: 40px;
-      margin-bottom: 40px;
-      z-index: 900;
-    }
-    #explicitback {
-      background-image: url("http://cdn.shopify.com/s/files/1/0426/9481/files/Kate_Upton_Pink_Flamingo_01b28052-7898-4fec-aba5-da6783277507_grande.jpg?915");
-      background-repeat: no-repeat;
-      background-size: cover;
+
+</head>
+<style>
+  #banner {
+    background-image: url("image/laptop.jpg");
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    height: 100%; }
+  section.banner div.row {
+    height: 100%; }
+    section.banner div.row div.col-md-12 {
+      height: 100%;
+      background-color: rgba(240, 248, 255, 0.75);
+      display: table; }
+      section.banner div.row div.col-md-12 h1 {
+        padding-top: 300px;
+        font-size: 48px;
+        text-align: center;
       }
-    </style>
-  </head>
-  <body>
-    <div class="demo-layout mdl-layout mdl-layout--fixed-header mdl-js-layout mdl-color--grey-100">
-      <header class="demo-header mdl-layout__header mdl-layout__header--scroll mdl-color--grey-100 mdl-color-text--grey-800">
-        <div class="mdl-layout__header-row">
-            <span class="mdl-layout-title" align="center">Kiddify <i class="material-icons">child_care</i></span>
-          <div class="mdl-layout-spacer"></div>
-        </div>
-      </header>
-      <div class="demo-ribbon"></div>
-      <main class="demo-main mdl-layout__content">
-        <div class="demo-container mdl-grid">
-          <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
-          <div class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
-            <div class="demo-crumbs mdl-color-text--grey-500">
-            </div>
-            <h3 align="center">Example of images</h3>
-            <br/>
-            <h4 align="center"><i>HTML Tagged images</i></h4>
-            <div class="mdl-grid">
-              <div class="mdl-cell mdl-cell--4-col"><img src="https://i.ytimg.com/vi/nLLBnE-22mo/maxresdefault.jpg" style="height: 250px; width: 250px;"></div>
-              <div class="mdl-cell mdl-cell--4-col"><img src="http://vignette3.wikia.nocookie.net/simpsons/images/b/b0/HomerSimpson5.gif/revision/latest?cb=20141025153213" style="height: 250px; width: 250px;"></div>
-              <div class="mdl-cell mdl-cell--4-col"><img src="http://i.kinja-img.com/gawker-media/image/upload/s--2lb15imp--/c_scale,fl_progressive,q_80,w_800/1475063766098781732.jpg" style="height: 250px; width: 250px;"></div>
-              <div class="mdl-cell mdl-cell--4-col"><img src="http://images.hngn.com/data/images/full/122708/nicki-minaj-wax-figure.jpg?w=650" style="height: 250px; width: 250px;"></div>
-              <div class="mdl-cell mdl-cell--4-col"><img src="http://www.ades.tv/recursos/agent.php?repository_id=1&resource_id=11&max=515" style="height: 250px; width: 250px;"></div>
-              <div class="mdl-cell mdl-cell--4-col"><img src="http://www.glamour.com/images/fashion/2009/05/0518-alessandra-ambrosio_li.jpg" style="height: 250px; width: 250px;"></div>
-            </div>
+
+      section.banner div.row div.col-md-12 h2 {
+        padding-top: 175px;
+        font-size: 36px;
+        text-align: center;
+      }
+</style>
+<body>
+  <section class="container-fluid banner" id="banner">
+		<div class="row">
+			<div class="col-md-12">
+        <h1>Kiddify  <i class="material-icons" style="font-size: 27px;">child_care</i></h1>
+				<h2>Explicit image filtering for children.</h2>
+				<span class="scroll-down"><a href="#about" id="go-to-about"><span class="fa-stack fa-3x"><i class="fa fa-angle-down fa-stack-1x"></i><i class="circle"></i></span></a></span>
+			</div>
+		</div>
+	</section>>
+
+  <div class="container-fluid">
+
+  <section id="typeofdrop" class="row activity-section">
+      <h2 class="text-center"> Dangers posed by explicit material on the internet today</h2>
+      <br/>
+          <div class="activity-element col-md-3 wow fadeInLeft">
+              <img class="img-circle" src="image/kids.jpg" alt="drip of Water Portrait" />
+              <h2>Interferes with healthy development</h2>
+              <p>May cause noticeable changes in behaviour and concentration.</p>
           </div>
-          <div align="center">
-          <button onclick="window.location.href='index1.html'"align="center" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect">
-              <i class="material-icons" align="center">keyboard_arrow_right</i>
-          </button>
-        </div>
-        </div>
-        <footer class="demo-footer mdl-mini-footer">
-        </footer>
-      </main>
-	  <br>
+          <div class="activity-element col-md-3 wow fadeInLeft">
+              <img class="img-circle" src="image/shock.jpg" alt="Water Drop Portrait" />
+              <h2>Impacts Decision Making</h2>
+              <p>May increase a child's risk of victimization, as it may blur boundaries.</p>
+          </div>
+          <div class="activity-element col-md-3 wow fadeInLeft">
+              <img class="img-circle" src="image/gender.jpg" alt="Water Drip Portrait" />
+              <h2>Fosters Negative Gender Identtiies</h2>
+              <p>May shape a child's expectations of physical appearances and certain acts.</p>
+          </div>
+
+           <div class="activity-element col-md-3 wow fadeInLeft">
+             <img class="img-circle" src="image/addict.jpg" alt="Orange water Dropping" />
+             <h2>Addiction</h2>
+             <p>Children may develop an addiction to adult content, which may continue into adulthood.  </p>
+           </div>
+      </section>
     </div>
-    <a href="https://github.com/google/material-design-lite/blob/master/templates/article/" id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast">View Source</a>
-    <script src="../../material.min.js"></script>
-    <script>
-    $(document).ready(function() {
-      $('#dynamic').delay(8000).fadeIn(400);
-      $("#dynamic").html("<img  style='position:absolute' src='http://www.elle.co.za/wp-content/uploads/2013/10/miranda-kerrr-co-uk-na-victorias-secret-fashion-show-victoria-secret-1791601470.gif'>");
-    });
-      </script>
-  </body>
+
+
+    <header id="video-wallpaper" class="top">
+        <nav class="navbar navbar-default navbar-fixed-top cbp-af-header"
+             role="navigation">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed"
+                            data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="#top">
+                        <h3 style="font-size: 24px;">Kiddify  <i class="material-icons" style="font-size: 27px;">child_care</i> </h3>
+                    </a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#banner">Home</a></li>
+                        <li><a href="#typeofdrop">Dangers</a></li>
+                        <li><a href="main.html">Example</a></li>
+                        <li><a href="#microdrop">Demo</a></li>
+                        <li><a href="#contact-us">Contact Us</a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+
+    </header>
+
+
+
+
+
+
+        <div class="container-fluid">
+        <section id="contact-us" class="row contact-us wow fadeInDown">
+
+        <p align="center"><span class=" fa-4x glyphicon glyphicon-envelope"></span></p>
+            <h1 align="center">CONTACT US</h1>
+
+            <form role="form">
+  <div class="form-group">
+    <label for="email">Email address:</label>
+    <input type="email" class="form-control" id="email">
+  </div>
+  <div class="form-group">
+    <label for="pwd">Password:</label>
+    <input type="password" class="form-control" id="pwd">
+  </div>
+  <div class="checkbox">
+    <label><input type="checkbox"> Remember me</label>
+  </div>
+  <button type="submit" class="bg-primary btn btn-xl">Submit</button>
+</form>
+
+        </section>
+
+    </div>
+
+
+    <footer class="container-fluid" align="center">
+        <div class="row">
+            <div class="col-md-8" align="center">
+                    <span class="copyright" align="center">Copyright &copy; Team Kiddify (Shashank Sabhlok, Jake Si, Peter Chu, Thomas Lui)  - DeltaHacks 2016</span>
+                </div>
+        </div>
+    </footer>
+
+    <script src="Scripts/jquery-2.1.1.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/classie.js"></script>
+    <script src="Scripts/cbpAnimatedHeader.js"></script>
+    <script src="Scripts/jquery.easing.1.3.js"></script>
+    <script src="Scripts/wow.min.js"></script>
+    <script src="Scripts/jquery.nanogallery.min.js"></script>
+    <!-- for the background video-->
+	<script src="Scripts/jquery.fs.wallpaper.min.js"></script>
+    <script src="Scripts/scrolling.js"></script>
+</body>
 </html>
